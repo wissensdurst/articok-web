@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+    <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script>
+      window.onload = () => {
+        const mobileMenuIcon = document.getElementById("mobile-menu-button");
+        mobileMenuIcon.addEventListener("click", () => {
+          if (mobileMenuIcon.classList.contains("open")) {
+            mobileMenuIcon.classList.remove("open");
+          } else {
+            mobileMenuIcon.classList.add("open");
+          }
+        });
+
+        const ticketsMenuItem = document.getElementById("tickets-menu-item");
+        ticketsMenuItem.addEventListener("click", () => {
+          if (ticketsMenuItem.classList.contains("open")) {
+            ticketsMenuItem.classList.remove("open");
+          } else {
+            ticketsMenuItem.classList.add("open");
+          }
+        });
+
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        darkModeToggle.addEventListener("click", () => {
+          if (document.body.classList.contains("dark")) {
+            document.body.classList.remove("dark");
+          } else {
+            document.body.classList.add("dark");
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <main class="bg-zinc-200 dark:bg-zinc-900">
+      <header class="text-zinc-200">
+        <div
+          id="dark-mode-toggle"
+          class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 p-2 text-3xl text-zinc-200 dark:bg-zinc-200 dark:text-zinc-900"
+        >
+          <i class="fa-solid fa-sun dark:hidden"></i>
+          <i class="fa-solid fa-moon hidden dark:inline"></i>
+        </div>
+        <nav
+          class="sticky top-0 z-30 flex bg-teal-700 bg-gradient-to-r from-teal-900"
+        >
+          <div class="flex items-center gap-2 px-4">
+            <img src="./assets/images/art_inverted.png" width="30" />
+            <div class="text-xl font-bold">ARTiČOK</div>
+          </div>
+          <div class="my-auto ml-auto block cursor-pointer pr-4 md:hidden">
+            <div id="mobile-menu-button" class="group peer">
+              <div
+                class="relative top-0 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:top-2 group-open:rotate-45"
+              ></div>
+              <div
+                class="mt-1 h-1 w-8 rounded-full bg-zinc-200 opacity-100 transition-all group-open:opacity-0"
+              ></div>
+              <div
+                class="relative top-0 mt-1 h-1 w-8 rounded-full bg-zinc-200 transition-all group-open:-top-2 group-open:-rotate-45"
+              ></div>
+            </div>
+            <div
+              class="absolute top-[62px] left-0 hidden w-full bg-teal-700 bg-gradient-to-r from-teal-900 peer-open:block"
+            >
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-zinc-200 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <span>Home</span>
+              </div>
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-zinc-200 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <span>Menu</span>
+              </div>
+              <div
+                id="tickets-menu-item"
+                class="group relative h-full cursor-pointer text-zinc-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+              >
+                <div class="p-4 text-center font-bold">Experience</div>
+                <div class="hidden group-open:block">
+                  <div
+                    class="transition-color relative p-4 text-center text-zinc-200 ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                  >
+                    <span>Chef's table</span>
+                  </div>
+                  <div
+                    class="transition-color relative p-4 text-center text-zinc-200 ease-in-out hover:bg-white/5 hover:text-zinc-200"
+                  >
+                    <span>Private dinning</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-zinc-200 transition-colors hover:bg-white/10 hover:text-zinc-200"
+              >
+                <span>Contact</span>
+              </div>
+            </div>
+          </div>
+          <div class="hidden flex-1 items-center justify-end md:flex">
+            <div class="menu-item">
+              <span>Home</span>
+            </div>
+            <div class="menu-item">
+              <span>Menu</span>
+            </div>
+            <div class="menu-item group">
+              <span>Experience</span>
+              <div
+                class="absolute top-full right-0 hidden whitespace-nowrap rounded-b-md bg-teal-700 text-right group-hover:block"
+              >
+                <div
+                  class="transition-color cursor-pointer p-4 font-bold text-zinc-200 ease-in hover:bg-white/5 hover:text-zinc-200"
+                >
+                  <span>Chef's table</span>
+                </div>
+                <div
+                  class="transition-color cursor-pointer p-4 font-bold text-zinc-200 ease-in hover:bg-white/5 hover:text-zinc-200"
+                >
+                  <span>Private dinning</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <span>Contact</span>
+            </div>
+          </div>
+        </nav>
+        <div
+          style="background-image: url('./assets/images/hero.jpg')"
+          class="flex h-[calc(100vh)] min-h-[400px] flex-col items-center justify-center bg-cover bg-fixed bg-center"
+        >
+          <div
+            class="z-10 mx-auto mt-32 max-w-6xl rounded-xl bg-white/30 py-2 px-4 text-center backdrop-blur-md"
+          >
+            <div class="relative">
+              <img
+                src="./assets/images/art_logo_1.png"
+                class="max-w-60%"
+                alt=""
+              />
+            </div>
+            <div class="text-4xl font-bold">
+              <span class="text-sky-900"></span>
+            </div>
+          </div>
+          <div class="mt-3 text-sm font-bold">
+            Keep me updated with news and promotions
+          </div>
+          <div class="mt-3 flex gap-2">
+            <input
+              type="email"
+              placeholder="Email"
+              class="rounded-sm border border-white/40 bg-white/30 p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500 backdrop-blur-md"
+            />
+            <div
+              class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
+            >
+              Subscribe
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!--Hero Sekcija-->
+      <section id="hero">
+        <!--Flex Container-->
+        <div
+          class="container mx-auto mt-10 flex items-center space-y-0 px-6 text-zinc-900 dark:text-zinc-200 md:space-y-0"
+        >
+          <!--Lijeva strana-->
+          <div class="mb-32 space-y-12">
+            <h1 class="text-center text-4xl font-bold md:text-5xl">
+              Bookings are open
+            </h1>
+            <p class="mx-auto text-center">
+              Welcome, friend, stranger, fellow seeker of the sublime, to
+              Articok. A world of Mediterranean delicacies, revelry and artistry
+              awaits. Bacchus, the classical god of wine and wild things, is our
+              muse. Wherever he wandered, drinks flowed and parties started.
+              People let go, to indulge in life’s richness. Here, the ancient
+              story of Bacchanalia is reimagined. Greco-Roman feasting, revived
+              imaginatively with exquisite ingredients and vintages. Legendary
+              entertainment, set within breathtaking interiors. For those who
+              long for escapism, sway this way…
+            </p>
+            <div class="items-center text-center">
+              <a
+                href="#"
+                class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Chefs-->
+      <section id="chefs" class="bg-white py-6 dark:bg-zinc-800">
+        <h2 class="mt-16 text-center text-4xl font-bold dark:text-white">
+          Meet our renowned chefs
+        </h2>
+        <!--Container Naslov-->
+        <div
+          class="dark:bg my-16 flex items-center px-5 text-center dark:text-white"
+        >
+          <!--Naslov-->
+
+          <!--Container Chef-->
+          <div
+            class="mx-auto mt-12 flex flex-col items-center justify-center md:flex-row md:space-x-6"
+          >
+            <!--Chef 1-->
+            <div
+              class="mx-6 flex max-w-md flex-col items-center space-y-6 rounded-lg bg-zinc-100 p-6 dark:bg-zinc-600 md:w-1/3"
+            >
+              <img
+                src="./assets/images/chef_1.png"
+                class="w-18 -mt-14"
+                alt=""
+              />
+              <h5 class="text-lg font-bold">Deni Srdoč</h5>
+              <p class="text-sm">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+            </div>
+
+            <!--Chef 2-->
+            <div
+              class="mx-6 flex max-w-md flex-col items-center space-y-6 rounded-lg bg-zinc-100 p-6 dark:bg-zinc-600 md:w-1/3"
+            >
+              <img
+                src="./assets/images/chef_2.png"
+                class="w-18 -mt-14"
+                alt=""
+              />
+              <h5 class="text-lg font-bold">Stipe Šušnjara</h5>
+              <p class="text-sm">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Sekcija Menu-->
+      <!-- <section id="menu" class="bg-gray-100">
+        <!--Container-->
+      <!--<div
+          class="container mx-auto flex flex-col items-center justify-between space-y-12 px-6 py-24 md:flex-row md:space-y-0 md:py-12"
+        >
+          <h2
+            class="text-center text-5xl font-bold leading-tight text-white md:max-w-xl md:text-left md:text-4xl"
+          >
+            Menu
+          </h2>
+          <p class="mx-auto text-center">
+            We elevate the Mediterranean’s most legendary dishes while reviving
+            the concept of a shared banqueting experience. The menu takes you to
+            the citrus and olive groves of Greece and Italy.
+          </p>
+          <!--Botun
+          <div>
+            <a
+              href="#"
+              class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
+            >
+              View Menus
+            </a>
+          </div>
+        </div>
+      </section> -->
+
+      <!--Footer-->
+      <footer class="bg-teal-900">
+        <!--Container-->
+        <div
+          class="container mx-auto flex flex-col-reverse justify-between space-y-8 px-6 py-10 md:flex-row md:space-y-0"
+        >
+          <!--Logo i ikone-->
+          <div
+            class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:items-start md:space-y-0"
+          >
+            <!--Logo-->
+            <div>
+              <img
+                src="./assets/images/art_full_inverted.png"
+                class="h-2/3"
+                alt=""
+              />
+            </div>
+            <!--Ikone-->
+            <div class="flex justify-center space-x-4">
+              <a href="#">
+                <img src="./assets/images/icon-facebook.svg" alt="" />
+              </a>
+              <a href="#">
+                <img src="./assets/images/icon-youtube.svg" alt="" />
+              </a>
+              <a href="#">
+                <img src="./assets/images/icon-twitter.svg" alt="" />
+              </a>
+              <a href="#">
+                <img src="./assets/images/icon-pinterest.svg" alt="" />
+              </a>
+              <a href="#">
+                <img src="./assets/images/icon-instagram.svg" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <!--List Container-->
+          <div class="flex justify-around space-x-32">
+            <div class="flex flex-col space-y-3 text-white">
+              <a href="" class="hover:text-gray-900">Home</a>
+              <a href="" class="hover:text-gray-900">Menu</a>
+              <a href="" class="hover:text-gray-900">Experience</a>
+              <a href="" class="hover:text-gray-900">About</a>
+            </div>
+            <div class="flex flex-col space-y-3 text-white">
+              <a href="" class="hover:text-gray-900">Careers</a>
+              <a href="" class="hover:text-gray-900">Contact</a>
+              <a href="" class="hover:text-gray-900">Privacy Policy</a>
+            </div>
+          </div>
+
+          <!--Input Forma-->
+          <div class="flex flex-col justify-between">
+            <form action="">
+              <div class="flex space-x-3">
+                <input
+                  class="flex-1 rounded-full px-4 focus:outline-none"
+                  placeholder="Subscribe to receive news from us"
+                  type="text"
+                />
+                <button
+                  class="cursor-pointer rounded-full bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg"
+                >
+                  Go
+                </button>
+              </div>
+            </form>
+            <div class="hidden text-white md:block">
+              Split Second &copy; 2022, All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
